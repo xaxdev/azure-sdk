@@ -255,7 +255,7 @@
 "","","","","Windows 10 IoT Core Services","","NA","NA","","","","","","true","","",""
 "","","","","Windows Virtual Desktop","","NA","NA","","","","","","true","","",""
 "","","","","Xamarin","","NA","NA","","","","","","true","","",""
-"azure-agrifood-farming","","1.0.0b1","azure-agrifood-farming","AgriFood","NA","NA","NA","","false","","","","","","",""
+"azure-agrifood-farming","","1.0.0b1","azure-agrifood-farming","AgriFood","NA","NA","NA","client","false","","","","","","",""
 "azure-agrifood-nspkg","1.0.0","","azure-agrifood-nspkg","","NA","NA","NA","","false","","","","","","",""
 "azure-ai-language-nspkg","1.0.0","","azure-ai-language-nspkg","","NA","NA","NA","","false","","","","","","",""
 "azure-ai-translation-nspkg","1.0.0","","azure-ai-translation-nspkg","","NA","NA","NA","","false","","","","","","",""
