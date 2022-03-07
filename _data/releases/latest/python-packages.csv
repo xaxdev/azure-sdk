@@ -437,7 +437,7 @@
 "azure-mgmt-edgegateway","","0.1.0","Resource Management - Edge Gateway","Stack Edge","https://github.com/Azure/azure-sdk-for-python/tree/azure-mgmt-edgegateway_0.1.0/azure-mgmt-edgegateway/","NA","","mgmt","false","","","preview","","","",""
 "azure-mgmt-eventgrid","3.0.0rc9","","Resource Management - Event Grid","Event Grid","eventgrid","","","mgmt","false","","","retired","true","azure-mgmt-eventgrid","https://devblogs.microsoft.com/azure-sdk/migrating-python-management-libraries/",""
 "azure-mgmt-eventgrid","10.1.0","","Resource Management - Event Grid","Event Grid","eventgrid","","","mgmt","false","","","active","","","",""
-"azure-mgmt-eventhub","5.0.0","","Resource Management - Event Hubs","Event Hubs","eventhub","","","mgmt","true","","","retired","true","azure-mgmt-eventhub","https://devblogs.microsoft.com/azure-sdk/migrating-python-management-libraries/",""
+"azure-mgmt-eventhub","5.0.0","","Resource Management - Event Hubs","Event Hubs","eventhub","","","mgmt","true","","","retired","","azure-mgmt-eventhub","https://devblogs.microsoft.com/azure-sdk/migrating-python-management-libraries/",""
 "azure-mgmt-frontdoor","0.3.0","","Resource Management - Frontdoor","Front Door","network","","","mgmt","false","","","retired","true","azure-mgmt-frontdoor","https://devblogs.microsoft.com/azure-sdk/migrating-python-management-libraries/",""
 "azure-mgmt-frontdoor","1.0.0","","Resource Management - Frontdoor","Front Door","network","","","mgmt","false","","","preview","","","",""
 "azure-mgmt-hanaonazure","0.15.0","","Resource Management - HANA on Azure","SAP HANA on Azure","hanaonazure","","","mgmt","true","","","retired","true","azure-mgmt-hanaonazure","https://devblogs.microsoft.com/azure-sdk/migrating-python-management-libraries/",""
