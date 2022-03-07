@@ -331,7 +331,7 @@
 "azure-cognitiveservices-search-customimagesearch","","0.2.0","Custom Image Search","Custom Image Search","cognitiveservices","NA","","client","false","","","maintenance","","","",""
 "azure-cognitiveservices-search-customsearch","","0.3.0","Custom Search","Custom Search","cognitiveservices","NA","","client","false","","","maintenance","","","",""
 "azure-cognitiveservices-vision-customvision","3.1.0","","Custom Vision","Custom Vision","cognitiveservices","","NA","client","false","","","active","","","",""
-"azure-datalake-store","0.0.51","","Data Lake Storage","Data Lake Storage (Gen 1)","NA","NA","NA","Client","false","","","","","","",""
+"azure-datalake-store","0.0.51","","Data Lake Storage","Data Lake Storage (Gen 1)","NA","NA","NA","client","false","","","","","","",""
 "azure-data-nspkg","1.0.0","","Data Namespace Package","Tables","NA","","NA","client","false","","","","","","","namespace package"
 "azure-devtools","1.2.0","","Dev Tools","Dev Tools","https://github.com/Azure/azure-python-devtools/tree/1.2.0/src/azure_devtools","NA","NA","client","false","","","","","","",""
 "azure-digitaltwins-nspkg","1.0.0","","Digital Twins Namespace Package","Digital Twins","NA","NA","NA","client","false","","","","","","","namespace package"
