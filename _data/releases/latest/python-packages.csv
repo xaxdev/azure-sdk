@@ -518,4 +518,3 @@
 "msal","","","","Active Directory","","NA","NA","client","false","","","","","","","Added for MSDocs ToC generation. Not published by azure-sdk automation."
 "pydocumentdb","","","","Cosmos DB","","NA","NA","client","false","","","","","","","Added for MSDocs ToC generation. Not published by azure-sdk automation."
 "azure-functions","","","","Functions","","NA","NA","client","false","","","","","","","Added for MSDocs ToC generation. Not published by azure-sdk automation."
-"azure-iothub-provisioningserviceclient","","","","IoT","","NA","NA","client","false","","","","","","","Added for MSDocs ToC generation. Not published by azure-sdk automation."
