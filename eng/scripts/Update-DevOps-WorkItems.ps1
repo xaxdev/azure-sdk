@@ -218,7 +218,8 @@ function RefreshItems()
     $pkg = $null
     $versions = $null
 
-    if ($pkgInfo) {
+    # If the csv entry is marked as "Needs Review" we want to prefer the data in the workitem over the data in csv
+    if ($pkgInfo -and $pkgInfo.PackageInfo.Notes -ne "Needs Review") {
       if ($pkgInfo.VersionGroups.ContainsKey($verMajorMinor)) {
         $versions = $pkgInfo.VersionGroups[$verMajorMinor].Versions
       }
@@ -317,7 +318,7 @@ function RefreshItems()
     $allVersionValues[$pkgLang][$pkgName] += $($updatedWI.fields["Custom.PackagePatchVersions"]) + "|"
   }
 
-  ## Loop over all packages in csv
+  ## Loop over all packages in marked as New in CSV files
   foreach ($pkgLang in $allVersions.Keys)
   {
     foreach ($pkgName in $allVersions[$pkgLang].Keys)
@@ -357,7 +358,7 @@ function RefreshItems()
         $today = [DateTime](Get-Date -Format "MM/dd/yyyy")
         foreach ($pkgVersionValue in $pkgVersionValues) {
           $ver, $date = $pkgVersionValue.Split(",")
-          if (($date -as [DateTime]) -gt $today) {
+          if (($date -as [DateTime]) -ge $today) {
             $pkgPlannedVersions[$ver] = New-Object PSObject -Property @{
               Version = $ver
               Date = ([DateTime]$date).Tostring("MM/dd/yyyy")

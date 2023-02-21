@@ -427,7 +427,7 @@ Most methods in Azure SDK libraries should be named following the typical .NET m
 
 ##### Cancellation
 
-{% include requirement/MUST id="dotnet-service-methods-cancellation" %} ensure all service methods, both asynchronous and synchronous, take an optional `CancellationToken` parameter called _cancellationToken_.
+{% include requirement/MUST id="dotnet-service-methods-cancellation" %} ensure all service methods, both asynchronous and synchronous, take an optional `CancellationToken` parameter called _cancellationToken_ or, in case of protocol methods, an optional `RequestContext` parameter called _context_.
 
 The token should be further passed to all calls that take a cancellation token. DO NOT check the token manually, except when running a significant amount of CPU-bound work within the library, e.g. a loop that can take more than a typical network call.
 
@@ -1036,9 +1036,13 @@ For example, if the component is in the `Azure.Storage.Blobs` namespace, the com
 
 Use the following target setting in the `.csproj` file:
 
-```
+```xml
 <TargetFramework>netstandard2.0</TargetFramework>
 ```
+
+{% include requirement/MUST id="dotnet-build-multi-targeting-api" %} define the same APIs for all [target framework monikers (TFMs)][.NET Target Framework Monikers].
+
+You may multi-target client libraries to different [TFMs][.NET Target Framework Monikers] but the public API must be the same for all targets including class, interface, parameter, and return types.
 
 #### Common Libraries
 
@@ -1091,7 +1095,7 @@ Use _-beta._N_ suffix for beta package versions. For example, _1.0.0-beta.2_.
 * `Microsoft.BCL.AsyncInterfaces`.
 * packages produced by your own team.
 
-In the past, [JSON.NET] was commonly used for serialization and deserialization. Use the [System.Text.Json](https://www.nuget.org/packages/System.Text.Json/)
+In the past, [JSON.NET](https://www.newtonsoft.com/json), aka Newtonsoft.Json, was commonly used for serialization and deserialization. Use the [System.Text.Json](https://www.nuget.org/packages/System.Text.Json/)
 package that is now a part of the .NET platform instead.
 
 {% include requirement/MUSTNOT id="dotnet-dependencies-exposing" %} publicly expose types from dependencies unless the types follow these guidelines as well.

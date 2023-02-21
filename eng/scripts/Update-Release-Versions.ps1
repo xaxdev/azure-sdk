@@ -168,9 +168,9 @@ function GetFirstGADate($pkgVersion, $pkg, $gaVersions)
     }
     if ($gaIndex -lt 0) { return "" }
     $gaVersion = $gaVersions[$gaIndex]
-    $committeDate = $gaVersion.Date
+    $committeDate = $gaVersion.Date -as [DateTime]
 
-    if ($committeDate -is [DateTime]) {
+    if ($committeDate) {
       $committeDate = $committeDate.ToString("MM/dd/yyyy")
       Write-Host "For package '$($pkg.Package)' picking GA '$($gaVersion.RawVersion)' shipped on '$committeDate' as the first new GA date."
       return $committeDate
@@ -233,7 +233,7 @@ function Update-Packages($lang, $packageList, $langVersions, $langLinkTemplates)
     }
     elseif ($pkg.VersionGA -ne $version) {
       if (CheckRequiredLinks $langLinkTemplates $pkg $version){
-        Write-Host "Updating VersionGA $($pkg.Package) from $($pkg.VersionGA) to $version"
+        Write-Host "Updating VersionGA for '$($pkg.Package)' from '$($pkg.VersionGA)' to '$version'"
         $pkg.VersionGA = $version;
       }
       else {
@@ -261,7 +261,7 @@ function Update-Packages($lang, $packageList, $langVersions, $langLinkTemplates)
     }
     elseif ($pkg.VersionPreview -ne $version) {
       if (CheckRequiredlinks $langLinkTemplates $pkg $version) {
-        Write-Host "Updating VersionPreview $($pkg.Package) from $($pkg.VersionPreview) to $version"
+        Write-Host "Updating VersionPreview for '$($pkg.Package)' from '$($pkg.VersionPreview)' to '$version'"
         $pkg.VersionPreview = $version;
       }
       else {
@@ -356,7 +356,16 @@ function CheckAll($langs)
   $serviceGroups = $serviceNames | Sort-Object ServiceName | Group-Object ServiceName
   Write-Host "Found $($serviceNames.Count) service name with $($serviceGroups.Count) unique names:"
 
-  $serviceGroups | Format-Table @{Label="Service Name"; Expression={$_.Name}}, @{Label="Langugages"; Expression={$_.Group.Lang | Sort-Object -Unique}}, Count, @{Label="Packages"; Expression={$_.Group.PkgInfo.Package}}
+  foreach ($service in $serviceGroups)
+  {
+    $languages = $service.Group.Lang | Sort-Object -Unique
+    $pkgGroups = $service.Group.PkgInfo | Group-Object DisplayName
+    Write-Host "$($service.Name) [$($languages -join ', ')]"
+    foreach ($pg in $pkgGroups)
+    {
+      Write-Host "        $($pg.Name) [$($pg.Group.Package -join ', ')]"
+    }
+  }
 
   if ($foundIssues) {
     Write-Error "Found one or more issues with data in the CSV files see the warnings above and fix as appropriate."
