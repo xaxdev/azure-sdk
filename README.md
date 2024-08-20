@@ -61,16 +61,16 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 [Design Guidelines for Python]: https://xaxdev.github.io/azure-sdk/python_design.html
 [revproc]: https://xaxdev.github.io/azure-sdk/policies_reviewprocess.html
 
-[azure-sdk Repository]: https://github.com/Azure/azure-sdk
-[azure-sdk-for-android Repository]: https://github.com/Azure/azure-sdk-for-android
-[azure-sdk-for-net Repository]: https://github.com/Azure/azure-sdk-for-net
-[azure-sdk-for-go Repository]: https://github.com/Azure/azure-sdk-for-go
-[azure-sdk-for-c Repository]: https://github.com/Azure/azure-sdk-for-c
-[azure-sdk-for-cpp Repository]: https://github.com/Azure/azure-sdk-for-cpp
-[azure-sdk-for-ios Repository]: https://github.com/Azure/azure-sdk-for-ios
-[azure-sdk-for-java Repository]: https://github.com/Azure/azure-sdk-for-java
-[azure-sdk-for-js Repository]: https://github.com/Azure/azure-sdk-for-js
-[azure-sdk-for-python Repository]: https://github.com/Azure/azure-sdk-for-python
+[azure-sdk Repository]:https://github.com/xaxdev/azure-sdk
+[azure-sdk-for-android Repository]:https://github.com/xaxdev/azure-sdk-for-android
+[azure-sdk-for-net Repository]:https://github.com/xaxdev/azure-sdk-for-net
+[azure-sdk-for-go Repository]:https://github.com/xaxdev/azure-sdk-for-go
+[azure-sdk-for-c Repository]:https://github.com/xaxdev/azure-sdk-for-c
+[azure-sdk-for-cpp Repository]:https://github.com/xaxdev/azure-sdk-for-cpp
+[azure-sdk-for-ios Repository]:https://github.com/xaxdev/azure-sdk-for-ios
+[azure-sdk-for-java Repository]:https://github.com/xaxdev/azure-sdk-for-java
+[azure-sdk-for-js Repository]:https://github.com/xaxdev/azure-sdk-for-js
+[azure-sdk-for-python Repository]:https://github.com/xaxdev/azure-sdk-for-python
 
 [Official Azure Documentation]: http://aka.ms/azure-sdk-docs
 [.NET Documentation]: http://aka.ms/net-docs
