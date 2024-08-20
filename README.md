@@ -49,17 +49,17 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 [![Github.io linkchecker](https://img.shields.io/azure-devops/build/azure-sdk/internal/1620?label=github.io%20linkchecker)](https://dev.azure.com/azure-sdk/internal/_build/latest?definitionId=1620&branchName=master)
 
-[General Design Guidelines]: https://azure.github.io/azure-sdk/general_introduction.html
-[Design Guidelines for Android]: https://azure.github.io/azure-sdk/android_design.html
-[Design Guidelines for .NET]: https://azure.github.io/azure-sdk/dotnet_introduction.html
-[Design Guidelines for Go]: https://azure.github.io/azure-sdk/golang_introduction.html
-[Design Guidelines for C99]: https://azure.github.io/azure-sdk/clang_design.html
-[Design Guidelines for C++]: https://azure.github.io/azure-sdk/cpp_introduction.html
-[Design Guidelines for iOS]: https://azure.github.io/azure-sdk/ios_introduction.html
-[Design Guidelines for Java]: https://azure.github.io/azure-sdk/java_introduction.html
-[Design Guidelines for TypeScript]: https://azure.github.io/azure-sdk/typescript_introduction.html
-[Design Guidelines for Python]: https://azure.github.io/azure-sdk/python_design.html
-[revproc]: https://azure.github.io/azure-sdk/policies_reviewprocess.html
+[General Design Guidelines]: https://xaxdev.github.io/azure-sdk/general_introduction.html
+[Design Guidelines for Android]: https://xaxdev.github.io/azure-sdk/android_design.html
+[Design Guidelines for .NET]: https://xaxdev.github.io/azure-sdk/dotnet_introduction.html
+[Design Guidelines for Go]: https://xaxdev.github.io/azure-sdk/golang_introduction.html
+[Design Guidelines for C99]: https://xaxdev.github.io/azure-sdk/clang_design.html
+[Design Guidelines for C++]: https://xaxdev.github.io/azure-sdk/cpp_introduction.html
+[Design Guidelines for iOS]: https://xaxdev.github.io/azure-sdk/ios_introduction.html
+[Design Guidelines for Java]: https://xaxdev.github.io/azure-sdk/java_introduction.html
+[Design Guidelines for TypeScript]: https://xaxdev.github.io/azure-sdk/typescript_introduction.html
+[Design Guidelines for Python]: https://xaxdev.github.io/azure-sdk/python_design.html
+[revproc]: https://xaxdev.github.io/azure-sdk/policies_reviewprocess.html
 
 [azure-sdk Repository]: https://github.com/Azure/azure-sdk
 [azure-sdk-for-android Repository]: https://github.com/Azure/azure-sdk-for-android
@@ -81,12 +81,12 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 [C Documentation]: https://aka.ms/c-docs
 [C++ Documentation]: https://aka.ms/cpp-docs
 
-[.NET Packages]: https://azure.github.io/azure-sdk/releases/latest/dotnet.html
-[Java Packages]: https://azure.github.io/azure-sdk/releases/latest/java.html
-[JavaScript Packages]: https://azure.github.io/azure-sdk/releases/latest/js.html
-[Python Packages]: https://azure.github.io/azure-sdk/releases/latest/python.html
-[C Packages]: https://azure.github.io/azure-sdk/releases/latest/c.html
-[C++ Packages]: https://azure.github.io/azure-sdk/releases/latest/cpp.html
-[Android Packages]: https://azure.github.io/azure-sdk/releases/latest/android.html
+[.NET Packages]: https://xaxdev.github.io/azure-sdk/releases/latest/dotnet.html
+[Java Packages]: https://xaxdev.github.io/azure-sdk/releases/latest/java.html
+[JavaScript Packages]: https://xaxdev.github.io/azure-sdk/releases/latest/js.html
+[Python Packages]: https://xaxdev.github.io/azure-sdk/releases/latest/python.html
+[C Packages]: https://xaxdev.github.io/azure-sdk/releases/latest/c.html
+[C++ Packages]: https://xaxdev.github.io/azure-sdk/releases/latest/cpp.html
+[Android Packages]: https://xaxdev.github.io/azure-sdk/releases/latest/android.html
 [iOS Packages]: https://azure.github.io/azure-sdk/releases/latest/ios.html
 [Go Packages]: https://azure.github.io/azure-sdk/releases/latest/go.html
