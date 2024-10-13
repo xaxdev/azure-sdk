@@ -86,7 +86,7 @@ function CheckOptionalLinks($linkTemplates, $pkg, $skipIfNA = $false)
   if (!$skipIfNA -or $pkg.MSDocs -eq "")
   {
     $preSuffix = GetLinkTemplateValue $linkTemplates "pre_suffix"
-    $msdocLink = GetLinkTemplateValue $linkTemplates "msdocs_url_template" $pkg.Package $pkg.VersionGA
+    $msdocLink = GetLinkTemplateValue $linkTemplates "msdocs_url_template" $pkg.Package
 
     if (!$pkg.VersionGA -and $pkg.VersionPreview -and $preSuffix) {
       $msdocLink += $preSuffix
@@ -103,6 +103,13 @@ function CheckOptionalLinks($linkTemplates, $pkg, $skipIfNA = $false)
         $pkg.MSDocs = "NA"
       }
     }
+  }
+
+  # We always perfer to the MSDoc links over GHDocs so they will never be displayed if MSDoc is setup so we
+  # don't need to worry about checking the GHDoc links unless MSDocs is NA.
+  if ($pkg.MSDocs -ne "NA") 
+  {
+    return
   }
 
   if (!$skipIfNA -or $pkg.GHDocs -eq "")
@@ -192,7 +199,7 @@ function Update-Packages($lang, $packageList, $langVersions, $langLinkTemplates)
       $pkgVersion = $langVersions[""]
     }
 
-    if ($null -eq $pkgVersion) {
+    if ($null -eq $pkgVersion -or !$pkgVersion.Versions) {
       Write-Verbose "Skipping update for $($pkg.Package) as we don't have version info for it. "
       CheckOptionalLinks $langLinkTemplates $pkg
       continue;
@@ -286,6 +293,7 @@ function OutputVersions($lang)
   Write-Host "Checking doc links for other packages"
   foreach ($otherPackage in $otherPackages)
   {
+    if ($otherPackage.Hide) { continue }
     CheckOptionalLinks $langLinkTemplates $otherPackage -skipIfNA $true
   }
 
@@ -309,7 +317,35 @@ function CheckAll($langs)
   {
     $clientPackages, $_ = Get-PackageListForLanguageSplit $lang
     $csvFile = Get-LangCsvFilePath $lang
-
+    $allClientPackages = Get-PackageListForLanguage $lang
+ 
+    foreach ($pkg in $allClientPackages){
+      if(($pkg.Support -eq "deprecated")) {
+        if (!$pkg.EOLDate -or $pkg.EOLDate -eq "NA")
+        {
+          Write-Warning "No EOLDate specified for deprecated package '$($pkg.Package)' in $csvFile."
+          $foundIssues = $true
+        }
+        if (!$pkg.Replace)
+        {
+          Write-Warning "No replacement package specified for deprecated package '$($pkg.Package)' in $csvFile."
+          Write-Warning "If the package name hasn't changed, copy the package name to the replacement library field."
+          $foundIssues = $true
+        }
+        # If a replacement package exists, check if the replacement name matches the deprecated name.
+        # Skip the migration guide check if the names are the same.
+        elseif ($pkg.Replace -ne $pkg.Package)
+        {
+          if (!$pkg.ReplaceGuide)
+          {
+            Write-Warning "No migration guide set for deprecated package '$($pkg.Package)' in $csvFile."
+            Write-Warning "Migration guide link should adhere to the following convention 'aka.ms/azsdk/<language>/migrate/<library>'"
+            $foundIssues = $true
+          }
+        }
+      }
+    }
+    
     foreach ($pkg in $clientPackages)
     {
       $serviceNames += [PSCustomObject][ordered]@{
